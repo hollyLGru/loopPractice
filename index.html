@@ -73,11 +73,16 @@ gender: "female"
                      ]
 // Create a function that uses a for...of loop and an if statement to console.logthe value associated with the key birthDate of each object if the birth year is an odd number.
 // REDO!
-let oddBirthdays = (arrayOfPersons) => {
-  for(let i = 0; i < arrayOfPersons.length; i++) {
-    if (arrayOfPersons[i].birthDate %2 != 0) {console.log(arrayOfPersons[i].birthDate)}
-  }
-}
+const oddBday = (arr) => {
+    for (let key of arr) {
+        let date = parseInt(key.birthDate.slice(-4));
+        if (date % 2 !== 0) {
+            console.log(date);
+        }
+    }
+};
+
+oddBday(arrayOfPersons)
 
 oddBirthdays(arrayOfPersons);
 // Use .map() to map over the arrayOfPersons and console.log() their information.
@@ -116,6 +121,18 @@ const before1990 = arrayOfPersons.filter((arrayOfPersons) => {
 })
 
 console.log(before1990)
+
+// find() from scratch !! 
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let findScratchFunc = (arr) => {
+  for (let i = 0; i < arr.length; i++){
+  let x = arr[i];
+ if (x % 2 == 0) {break};
+    console.log(x)
+  }
+}
+ 
+findScratchFunc(arr)
 
 </script>
 </html>
