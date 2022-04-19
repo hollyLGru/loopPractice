@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+// Use a do...while loop to console.log the numbers from 1 to 1000.
+let countToTen = 0;
+while (countToTen <= 1000){
+  countToTen = countToTen + 1;
+  console.log(countToTen);
+}
+
+// Create an object (with keys and values) called person with the following data
+let person = {
+firstName: "Jane",
+lastName: "Doe",
+birthDate: "Jan 5, 1925",
+gender: "female"}
+
+// Create a function that logs out the keys of the object using Object.keys()
+let keyInfo = Object.keys(person)
+console.log(keyInfo)
+// OR CAN DO THIS WAY:
+const personsKeys = (obj) => {
+    let objKeys = Object.keys(obj);
+    console.log(objKeys)}
+
+personsKeys(person)
+
+// Create a function that logs out the keys and values of the object using Object.entries().
+
+let keyEntries = Object.entries(person)
+console.log(keyEntries)
+// OR CAN WRITE LIKE THIS:
+const personsEntries = (obj) => {
+  let keyEntry2 = Object.entries(person)
+  console.log(keyEntry2)
+};
+
+personsEntries()
+
+// Create an arrayOfPersons that contains multiple "people" objects. You can simply copy/paste the person object you made above multiple times. Feel free to change the values to reflect multiple people you might have in your database.
+
+let arrayOfPersons = [{
+firstName: "Sally",
+lastName: "Smith",
+birthDate: "Jan 5, 1925",
+gender: "female"
+}, {
+firstName: "Hadley",
+lastName: "Grace",
+birthDate: "Jan 7, 1954",
+gender: "female"
+}, {
+  firstName: "Colin",
+lastName: "Frey",
+birthDate: "Aug 15, 1995",
+gender: "male"
+}, {
+firstName: "Julie",
+lastName: "Wise",
+birthDate: "Nov 5, 1908",
+gender: "female" 
+}
+                     ]
+// Create a function that uses a for...of loop and an if statement to console.logthe value associated with the key birthDate of each object if the birth year is an odd number.
+// REDO!
+let oddBirthdays = (arrayOfPersons) => {
+  for(let i = 0; i < arrayOfPersons.length; i++) {
+    if (arrayOfPersons[i].birthDate %2 != 0) {console.log(arrayOfPersons[i].birthDate)}
+  }
+}
+
+oddBirthdays(arrayOfPersons);
+// Use .map() to map over the arrayOfPersons and console.log() their information.
+
+const personInfo = arrayOfPersons.map((arrayOfPersons) => {
+  return arrayOfPersons})
+
+console.log(personInfo);
+
+// Use .filter() to filter the persons array and console.log 0only males in the array.
+const filterMales = arrayOfPersons.filter((arrayOfPersons) => {
+  if (arrayOfPersons.gender == 'male')
+    return arrayOfPersons;
+})
+
+console.log(filterMales);
+
+// Create a function that returns true if the value of birthDate is before Jan 1, 1990.
+const userBday = arrayOfPersons.map((arrayOfPersons) => {
+  let bday =arrayOfPersons.birthDate;
+  let bSplit = bday.split(" ");
+  let bYear = bSplit[2];
+  if (bYear < 1990) {return true}
+  else {return false}
+})
+
+console.log(userBday)
+
+
+// Use .filter() to filter the persons array and console.log only people that were born before Jan 1, 1990.
+const before1990 = arrayOfPersons.filter((arrayOfPersons) => {
+  let bday =arrayOfPersons.birthDate;
+  let bSplit = bday.split(" ");
+  let bYear = bSplit[2];
+  if (bYear < 1990) {return true}
+})
+
+console.log(before1990)
+
+</script>
+</html>
