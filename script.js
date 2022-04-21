@@ -133,22 +133,21 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   
   console.log(solution)
 
-  // findIndex() from scratch
-  let arrtwo = ["orange", "green", "yellow", "blue", "pink", "red"]
-  let findIndexScratch = (arrtwo, callBack) => {
-      for (let i = 0; i < arrtwo.length; i++) {
-          let x = arrtwo[i]
-      let pass = callBack(x);
-          if (pass) 
-              return x; 
-      else {return -1}
-          
-      }
-  };
-  
-  let solution2 = findIndexScratch(arrtwo, function(elem) {
-  if (elem == "orange" ) {return true}
-  }
-                                )
-  console.log(solution2);
-  
+ // findIndex() from scratch
+ let arrtwo = ["orange", "green", "yellow", "blue", "pink", "red"]
+ let findIndexScratch = (arrtwo, callBack) => {
+     for (let i = 0; i < arrtwo.length; i++) {
+       let x = arrtwo[i]
+       let pass = callBack(x);
+       if (pass){
+         return i;
+       }
+     }
+    return -1;
+ };
+ 
+ let solution2 = findIndexScratch(arrtwo, function(elem) {
+ if (elem == "orange" ) {return true}
+ }
+                               )
+ console.log(solution2);
